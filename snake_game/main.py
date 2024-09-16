@@ -37,7 +37,7 @@ def main():
     while game_is_on:
         snake.move()
         screen.update()
-        time.sleep(0.07)
+        time.sleep(0.1)
 
         if has_collided(snake, food):
             food.relocate()
