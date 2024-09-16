@@ -21,6 +21,12 @@ def set_controllers(snake, screen):
     screen.onkey(snake.down, "s")
 
 
+def has_collided(snake, food):
+    if snake.head.distance(food.position()) < 15:
+        return True
+    return False
+
+
 def main():
     screen = set_screen()
     snake = Snake()
@@ -32,6 +38,9 @@ def main():
         snake.move()
         screen.update()
         time.sleep(0.07)
+
+        if has_collided(snake, food):
+            food.relocate()
 
     screen.exitonclick()
 
