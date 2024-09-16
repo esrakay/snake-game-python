@@ -21,8 +21,8 @@ def set_controllers(snake, screen):
 
 
 def main():
-    snake = Snake()
     screen = set_screen()
+    snake = Snake()
     set_controllers(snake=snake, screen=screen)
 
     game_is_on = True
