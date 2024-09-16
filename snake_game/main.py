@@ -1,10 +1,10 @@
 import time
 from turtle import Screen
-from snake import Snake
+from snake_game.classes.snake import Snake
 
 
 screen = Screen()
-screen.setup(600, 600)
+screen.setup(500, 500)
 screen.bgcolor("black")
 screen.title("Snake Game")
 screen.tracer(0)

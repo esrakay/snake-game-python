@@ -1,4 +1,4 @@
-from snake_body import SnakeBody
+from snake_game.classes.snake_body import SnakeBody
 
 NORTH = 90
 WEST = 180
