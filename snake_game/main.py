@@ -2,6 +2,7 @@ import time
 from turtle import Screen
 from snake_game.classes.snake import Snake
 from snake_game.classes.food import Food
+from snake_game.classes.scoreboard import Scoreboard
 
 
 def set_screen():
@@ -31,6 +32,7 @@ def main():
     screen = set_screen()
     snake = Snake()
     food = Food()
+    scoreboard = Scoreboard()
     set_controllers(snake=snake, screen=screen)
 
     game_is_on = True
@@ -40,6 +42,7 @@ def main():
         time.sleep(0.1)
 
         if has_collided(snake, food):
+            scoreboard.increase_score()
             food.relocate()
 
     screen.exitonclick()
