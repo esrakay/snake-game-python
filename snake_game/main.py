@@ -56,6 +56,10 @@ def main():
             game_is_on = False
             scoreboard.game_over()
 
+        if snake.collided_with_tail():
+            game_is_on = False
+            scoreboard.game_over()
+
 
     screen.exitonclick()
 

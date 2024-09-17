@@ -34,6 +34,13 @@ class Snake:
         tail = self.body[-1]
         self.add_body(tail.position())
 
+    def collided_with_tail(self):
+        tails = self.body[1:]
+        for tail in tails:
+            if self.head.distance(tail.position()) < 10:
+                return True
+        return False
+
     def up(self):
         if not self.head.heading() == SOUTH:
             self.head.setheading(NORTH)
