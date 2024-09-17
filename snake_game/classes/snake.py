@@ -5,7 +5,7 @@ WEST = 180
 SOUTH = 270
 EAST = 0
 MOVEMENT_DISTANCE = 20
-STARTING_X_POS = [0, -20, -40]
+STARTING_X_POS = [(0, 0), (-20, 0), (-40, 0)]
 
 
 class Snake:
@@ -15,10 +15,13 @@ class Snake:
         self.head = self.body[0]
 
     def create_snake(self):
-        for i in range(3):
-            new_body = SnakeBody()
-            new_body.goto(STARTING_X_POS[i], 0)
-            self.body.append(new_body)
+        for position in STARTING_X_POS:
+            self.add_body(position)
+
+    def add_body(self, position):
+        new_body = SnakeBody()
+        new_body.goto(position)
+        self.body.append(new_body)
 
     def move(self):
         for i in range(len(self.body) - 1, 0, -1):
@@ -26,6 +29,10 @@ class Snake:
             y_pos = self.body[i - 1].ycor()
             self.body[i].goto(x_pos, y_pos)
         self.head.forward(MOVEMENT_DISTANCE)
+
+    def expand(self):
+        tail = self.body[-1]
+        self.add_body(tail.position())
 
     def up(self):
         if not self.head.heading() == SOUTH:

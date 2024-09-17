@@ -49,6 +49,7 @@ def main():
 
         if has_collided(snake, food):
             scoreboard.increase_score()
+            snake.expand()
             food.relocate()
 
         if hit_wall(snake):
