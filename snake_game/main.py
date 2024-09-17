@@ -28,6 +28,12 @@ def has_collided(snake, food):
     return False
 
 
+def hit_wall(snake):
+    if snake.head.xcor() > 230 or snake.head.xcor() < -230 or snake.head.ycor() > 230 or snake.head.ycor() < -230:
+        return True
+    return False
+
+
 def main():
     screen = set_screen()
     snake = Snake()
@@ -44,6 +50,11 @@ def main():
         if has_collided(snake, food):
             scoreboard.increase_score()
             food.relocate()
+
+        if hit_wall(snake):
+            game_is_on = False
+            scoreboard.game_over()
+
 
     screen.exitonclick()
 
