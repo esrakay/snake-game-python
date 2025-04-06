@@ -4,7 +4,7 @@ from snake_game.models.game_screen import GameScreen
 from snake_game.models.snake import Snake
 from snake_game.models.food import Food
 from snake_game.models.scoreboard import Scoreboard
-from collision_manager import CollisionManager
+from .collision_manager import CollisionManager
 
 
 class GameManager:
