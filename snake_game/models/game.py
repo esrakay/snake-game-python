@@ -1,6 +1,6 @@
 import time
 from turtle import Screen
-from snake_game.classes.snake import Snake
+from snake_game.models.snake import Snake
 
 
 class Game:

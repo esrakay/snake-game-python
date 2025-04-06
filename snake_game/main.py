@@ -1,8 +1,8 @@
 import time
 from turtle import Screen
-from snake_game.classes.snake import Snake
-from snake_game.classes.food import Food
-from snake_game.classes.scoreboard import Scoreboard
+from snake_game.models.snake import Snake
+from snake_game.models.food import Food
+from snake_game.models.scoreboard import Scoreboard
 
 
 def set_screen():
